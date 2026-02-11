@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pediatri AI Arayüzü</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-icon">✚</div>
+          <div>
+            <h1>PediAsistan</h1>
+            <p>Pediatri Uzmanı Paneli</p>
+          </div>
+        </div>
+
+        <button class="primary-btn">+ Yeni Danışma</button>
+
+        <nav class="menu">
+          <a class="menu-item active" href="#">Panel</a>
+          <a class="menu-item" href="#">AI Sohbet Botu</a>
+          <a class="menu-item" href="#">İlaç Rehberi</a>
+          <a class="menu-item" href="#">Doz Hesaplayıcı</a>
+          <a class="menu-item" href="#">Hasta Kayıtları</a>
+        </nav>
+
+        <div class="support-card">
+          <p>DESTEK SEVİYESİ</p>
+          <strong>Uzman Asistan</strong>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <input class="search" placeholder="İlaç, semptom veya hasta ID ara..." />
+          <div class="doctor-pill">Dr. Selin Demir · Pediatri Uzmanı</div>
+        </header>
+
+        <section class="welcome">
+          <h2>Tekrar hoş geldiniz, Dr. Demir</h2>
+          <p>Pediatrik bakım hesaplamaları ve klinik sorgularınız için hazırız.</p>
+        </section>
+
+        <section class="feature-grid">
+          <article class="feature-card">
+            <h3>AI Sohbet Botu</h3>
+            <p>Güncel pediatrik protokollere dayalı anlık semptom analizi ve klinik rehberlik.</p>
+            <button>Sohbeti Başlat →</button>
+          </article>
+          <article class="feature-card">
+            <h3>İlaç Rehberi</h3>
+            <p>Kapsamlı güvenlik verileri, ilaç etkileşimleri ve yaşa özel kontrendikasyonlar.</p>
+            <button>İlaçları İncele →</button>
+          </article>
+          <article class="feature-card">
+            <h3>Doz Hesaplayıcı</h3>
+            <p>Doğru pediatrik reçeteleme için hassas, kilo bazlı dozaj hesaplamaları.</p>
+            <button>Doz Hesapla →</button>
+          </article>
+        </section>
+
+        <section class="workspace">
+          <div class="chat-panel card">
+            <h3>Bugün size nasıl yardımcı olabilirim?</h3>
+            <p>Sizin yapay zeka sağlık yoldaşınızım. Belirtiler, takvimler veya çocuk gelişimi hakkında soru sorabilirsiniz.</p>
+            <div class="prompt-grid">
+              <button>Ateş nasıl düşürülür?</button>
+              <button>Aşı takvimi</button>
+              <button>Beslenme Rehberi</button>
+              <button>Uyku Rutinleri</button>
+            </div>
+            <div class="chat-input">
+              <input placeholder="Sorunuzu buraya yazın..." />
+              <button>Gönder</button>
+            </div>
+          </div>
+
+          <div class="quick-tools card">
+            <h3>Hızlı Araçlar</h3>
+            <button class="tool-btn">Dozaj Hesapla</button>
+            <button class="tool-btn">Büyüme Grafiği</button>
+            <div class="alert-box">
+              <h4>En Yakın Acil</h4>
+              <p>Özel Çocuk Hastanesi · 3.2 km · 10 dk sürüş</p>
+              <button>Hemen Ara</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide card">
+          <div class="guide-header">
+            <h3>İlaç Kullanım Kılavuzu</h3>
+            <input placeholder="İlaç ara (örn. Parasetamol, ibuprofen)..." />
+          </div>
+          <div class="drug-list">
+            <article class="drug-item">
+              <div>
+                <h4>Asetaminofen <span>ÖRN: CALPOL, TYLOL</span></h4>
+                <p>Yaygın bir ağrı kesici ve ateş düşürücü. Bebekler için uygun formları mevcuttur.</p>
+              </div>
+              <button>Dozaj Tablosu</button>
+            </article>
+            <article class="drug-item">
+              <div>
+                <h4>Amoksisilin <span>ÖRN: LARGOPEN, AMOKLAVİN</span></h4>
+                <p>Bakteriyel enfeksiyonlarda kullanılan penisilin tipi bir antibiyotik.</p>
+              </div>
+              <button>Dozaj Tablosu</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="dose card">
+          <h3>Pediatrik Doz Hesaplayıcı</h3>
+          <form id="doseForm" class="dose-form">
+            <label>
+              İlaç Seçimi
+              <select id="drug">
+                <option value="15">Parasetamol (120mg/5ml)</option>
+                <option value="10">İbuprofen (100mg/5ml)</option>
+              </select>
+            </label>
+            <label>
+              Çocuğun Kilosu (kg)
+              <input id="weight" type="number" value="12.5" step="0.1" min="1" />
+            </label>
+            <button type="submit">Hesapla</button>
+          </form>
+          <div id="result" class="result">Önerilen doz: 7.8 ml (Yaklaşık 187.5 mg)</div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
